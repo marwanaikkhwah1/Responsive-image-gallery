@@ -1,0 +1,360 @@
+/* =========================
+   General Styles
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f6fa;
+    color: #222;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #222;
+    color: white;
+}
+
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+
+.header p {
+    color: #d7d7d7;
+}
+
+
+/* =========================
+   Main Container
+========================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+
+/* =========================
+   Filter Buttons
+========================= */
+
+.filter-section {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+
+.filter-btn {
+    border: none;
+    background-color: white;
+    padding: 10px 22px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+
+    transition:
+        background-color 0.3s,
+        color 0.3s,
+        transform 0.3s;
+}
+
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+.filter-btn.active {
+    background-color: #222;
+    color: white;
+}
+
+
+/* =========================
+   Gallery
+========================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.gallery-item {
+    height: 260px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: white;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition:
+        transform 0.4s,
+        filter 0.4s;
+}
+
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+    filter: brightness(0.85);
+}
+
+
+/* Used by JavaScript filtering */
+
+.gallery-item.hide {
+    display: none;
+}
+
+
+/* =========================
+   Lightbox
+========================= */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+
+    background-color:
+        rgba(0, 0, 0, 0.9);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+
+    padding: 20px;
+}
+
+
+.lightbox.show {
+    display: flex;
+}
+
+
+.lightbox-content {
+    max-width: 850px;
+    width: 80%;
+    text-align: center;
+}
+
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 75vh;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+
+#imageCaption {
+    color: white;
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+
+/* =========================
+   Lightbox Buttons
+========================= */
+
+.close-btn {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    background: none;
+    border: none;
+
+    color: white;
+    font-size: 45px;
+
+    cursor: pointer;
+}
+
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    border: none;
+    background-color:
+        rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 35px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s;
+}
+
+
+.nav-btn:hover {
+    background-color:
+        rgba(255, 255, 255, 0.35);
+}
+
+
+.prev-btn {
+    left: 30px;
+}
+
+
+.next-btn {
+    right: 30px;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+.footer {
+    text-align: center;
+    padding: 25px 15px;
+
+    background-color: #222;
+    color: #ddd;
+
+    margin-top: 50px;
+}
+
+
+/* =========================
+   Tablet Responsive
+========================= */
+
+@media (max-width: 900px) {
+
+    .gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 35px 15px;
+    }
+
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+
+    .container {
+        width: 92%;
+        margin: 30px auto;
+    }
+
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+
+    .gallery-item {
+        height: 250px;
+    }
+
+
+    .filter-btn {
+        padding: 9px 17px;
+    }
+
+
+    .lightbox-content {
+        width: 75%;
+    }
+
+
+    .nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+    }
+
+
+    .prev-btn {
+        left: 8px;
+    }
+
+
+    .next-btn {
+        right: 8px;
+    }
+
+
+    .close-btn {
+        top: 10px;
+        right: 20px;
+    }
+
+}

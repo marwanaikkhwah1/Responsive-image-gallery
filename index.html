@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Responsive Image Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Responsive Image Gallery</h1>
+
+        <p>
+            Explore nature, city and food photography.
+        </p>
+    </header>
+
+
+    <main class="container">
+
+        <!-- Filter Buttons -->
+        <section class="filter-section">
+
+            <button
+                class="filter-btn active"
+                data-filter="all"
+            >
+                All
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="nature"
+            >
+                Nature
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="city"
+            >
+                City
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="food"
+            >
+                Food
+            </button>
+
+        </section>
+
+
+        <!-- Gallery -->
+        <section class="gallery">
+
+            <div
+                class="gallery-item"
+                data-category="nature"
+            >
+                <img
+                    src="images/nature1.jpg"
+                    alt="Beautiful mountain landscape"
+                >
+            </div>
+
+
+            <div
+                class="gallery-item"
+                data-category="nature"
+            >
+                <img
+                    src="images/nature2.jpg"
+                    alt="Green forest"
+                >
+            </div>
+
+
+            <div
+                class="gallery-item"
+                data-category="nature"
+            >
+                <img
+                    src="images/nature3.jpg"
+                    alt="Nature landscape"
+                >
+            </div>
+
+
+            <div
+                class="gallery-item"
+                data-category="city"
+            >
+                <img
+                    src="images/city1.jpg"
+                    alt="Modern city"
+                >
+            </div>
+
+
+            <div
+                class="gallery-item"
+                data-category="city"
+            >
+                <img
+                    src="images/city2.jpg"
+                    alt="City buildings"
+                >
+            </div>
+
+
+            <div
+                class="gallery-item"
+                data-category="city"
+            >
+                <img
+                    src="images/city3.jpg"
+                    alt="City street"
+                >
+            </div>
+
+
+            <div
+                class="gallery-item"
+                data-category="food"
+            >
+                <img
+                    src="images/food1.jpg"
+                    alt="Delicious food"
+                >
+            </div>
+
+
+            <div
+                class="gallery-item"
+                data-category="food"
+            >
+                <img
+                    src="images/food2.jpg"
+                    alt="Healthy meal"
+                >
+            </div>
+
+
+            <div
+                class="gallery-item"
+                data-category="food"
+            >
+                <img
+                    src="images/food3.jpg"
+                    alt="Fresh food"
+                >
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+
+        <button
+            class="close-btn"
+            id="closeBtn"
+            aria-label="Close image"
+        >
+            &times;
+        </button>
+
+
+        <button
+            class="nav-btn prev-btn"
+            id="prevBtn"
+            aria-label="Previous image"
+        >
+            &#10094;
+        </button>
+
+
+        <div class="lightbox-content">
+
+            <img
+                id="lightboxImage"
+                src=""
+                alt=""
+            >
+
+            <p id="imageCaption"></p>
+
+        </div>
+
+
+        <button
+            class="nav-btn next-btn"
+            id="nextBtn"
+            aria-label="Next image"
+        >
+            &#10095;
+        </button>
+
+    </div>
+
+
+    <footer class="footer">
+        <p>
+        <p>© 2026 Marwa Naikkhwah. All rights reserved.</p>
+        </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
